@@ -35,8 +35,7 @@ public class PlayerCollision : MonoBehaviour
             //HUDManager.SetHPBar(playerData.HP);
             PlayerCollision.OnChangeHP?.Invoke(playerData.HP);
             //SUMAS SCORE
-            GameManager.Score++;
-            Debug.Log(GameManager.Score);
+            GameManager.instance.SetScore(1);
         }
 
         if (other.gameObject.CompareTag("Munitions"))
@@ -56,7 +55,7 @@ public class PlayerCollision : MonoBehaviour
                 PlayerCollision.OnDead?.Invoke();
             }
             //RESTAS SCORE
-            GameManager.Score--;
+            GameManager.instance.SetScore(-1);
             // Debug.Log(GameManager.Score);
         }
 

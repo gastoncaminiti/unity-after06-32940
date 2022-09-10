@@ -27,6 +27,7 @@ public class HUDManager : MonoBehaviour
             PlayerCollision.OnDead += GameOver;
             PlayerCollision.OnChangeHP += SetHPBar;
             PlayerEvents.OnWin += WinUI;
+            GameManager.OnChangeScore += ScoreUI;
         }
         else
         {
@@ -94,10 +95,16 @@ public class HUDManager : MonoBehaviour
         winPanel.SetActive(true);
     }
 
+    private void ScoreUI(int score)
+    {
+        selectedText.text = score.ToString();
+    }
+
     private void OnDisable()
     {
         PlayerCollision.OnDead -= GameOver;
         PlayerCollision.OnChangeHP -= SetHPBar;
         PlayerEvents.OnWin -= WinUI;
+        GameManager.OnChangeScore -= ScoreUI;
     }
 }

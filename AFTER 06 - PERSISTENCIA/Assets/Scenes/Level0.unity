@@ -8500,6 +8500,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3191bee1256c3674a89c26b209829f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
+  myHistory:
+    playerName: CODEWR
+    scores: 02000000220000000100000002000000
 --- !u!1 &1161092281
 GameObject:
   m_ObjectHideFlags: 0
